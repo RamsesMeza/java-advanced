@@ -1,6 +1,6 @@
 package com.generics;
 
-public class GenericMethods {
+public class UtilsGenericMethods {
 
   public static <T> void printItem(T value) {
     System.out.println(value);

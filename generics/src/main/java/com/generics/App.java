@@ -8,9 +8,9 @@ public class App {
         Box<String> box = new Box<>("Pokemon");
         System.out.println(box);
 
-        GenericMethods.printItem("Hola men!");
-        GenericMethods.printItem("Galletas", 1);
-        GenericMethods.printItem("Galletas", "Ricas");
+        UtilsGenericMethods.printItem("Hola men!");
+        UtilsGenericMethods.printItem("Galletas", 1);
+        UtilsGenericMethods.printItem("Galletas", "Ricas");
 
         System.out.println(GenericRestricted.sum(10, 3));
 
