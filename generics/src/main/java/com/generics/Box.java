@@ -1,4 +1,4 @@
-package com.generics.generic.classes;
+package com.generics;
 
 public class Box<T> {
   private T value;

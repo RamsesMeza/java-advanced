@@ -1,7 +1,5 @@
 package com.generics;
 
-import com.generics.generic.classes.Box;
-
 public class App {
     public static void main(String[] args) {
 

@@ -1,6 +1,8 @@
-package custom.collections;
+package custom.collections.linkedlist;
 
 import java.util.Objects;
+
+import custom.collections.Node;
 
 public class CustomLinkedList<T> {
   private Node<T> head;

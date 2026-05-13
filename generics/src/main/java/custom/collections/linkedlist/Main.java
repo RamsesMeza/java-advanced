@@ -1,7 +1,4 @@
-package custom.collections;
-
-import java.util.LinkedList;
-import java.util.List;
+package custom.collections.linkedlist;
 
 public class Main {
   public static void main(String[] args) {
