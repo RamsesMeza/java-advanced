@@ -17,7 +17,7 @@ public interface StudentView {
 
   Integer askAttendance();
 
-  void showStudents(List<?> students);
+  void showStudents(List<Student> students);
 
   void showMessage(String message);
 

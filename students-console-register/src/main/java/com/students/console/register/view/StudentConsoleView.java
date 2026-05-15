@@ -59,9 +59,20 @@ public class StudentConsoleView implements StudentView {
   }
 
   @Override
-  public void showStudents(List<?> students) {
-    for (Object s : students) {
-      System.out.println(s);
+  public void showStudents(List<Student> students) {
+
+    if (students.size() == 0) {
+      System.out.println("\nThere are not students register");
+    } else {
+      for (Student s : students) {
+        System.out.println("Id: " + s.getId());
+        System.out.println("Name:" + s.getName());
+        System.out.println("Grade: " + s.getGrade());
+        System.out.println("Attendance: " + s.getAttendance());
+
+        String state = s.isApproved() ? "Approved" : "Failed";
+        System.out.println("State: " + state);
+      }
     }
   }
 
