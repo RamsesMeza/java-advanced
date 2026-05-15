@@ -8,6 +8,9 @@ import com.students.console.register.dto.RegisteStudentDTO;
 import com.students.console.register.model.Student;
 import com.students.console.register.repository.StudentRepository;
 
+import exceptions.StudentDomainException;
+import exceptions.StudentException;
+
 public class StudentService {
 
   private StudentRepository studentRepository;
@@ -16,7 +19,13 @@ public class StudentService {
     this.studentRepository = studentRepository;
   }
 
-  public Student registerStudent(RegisteStudentDTO student) {
+  public Student registerStudent(RegisteStudentDTO student) throws StudentDomainException, StudentException {
+    Optional<Student> currentStudent = this.studentRepository.findStudentById(student.id());
+
+    if (currentStudent.isPresent()) {
+      throw new StudentException("The id was used for other student, try again!");
+    }
+
     Student newStudent = new Student(student.id(), student.name(), student.grade(), student.attendance());
     return this.studentRepository.add(newStudent);
   }

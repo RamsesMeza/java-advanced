@@ -71,6 +71,11 @@ public class StudentConsoleView implements StudentView {
     System.out.println("Student");
     System.out.println("Id: " + student.getId());
     System.out.println("Name:" + student.getName());
+    System.out.println("Grade: " + student.getGrade());
+    System.out.println("Attendance: " + student.getAttendance());
+
+    String state = student.isApproved() ? "Approved" : "Failed";
+    System.out.println("State: " + state);
   }
 
 }
