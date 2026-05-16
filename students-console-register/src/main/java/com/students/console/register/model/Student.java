@@ -41,7 +41,7 @@ public class Student {
   }
 
   public boolean isApproved() {
-    if (this.grade == null | this.attendance == null) {
+    if (this.grade == null || this.attendance == null) {
       return false;
     }
     return this.grade >= 6 && this.attendance >= 80;
