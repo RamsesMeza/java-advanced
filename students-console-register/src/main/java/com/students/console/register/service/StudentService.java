@@ -1,8 +1,7 @@
 package com.students.console.register.service;
 
-import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import com.students.console.register.dto.RegisteStudentDTO;
 import com.students.console.register.model.Student;
@@ -20,9 +19,9 @@ public class StudentService {
   }
 
   public Student registerStudent(RegisteStudentDTO student) throws StudentDomainException, StudentException {
-    Optional<Student> currentStudent = this.studentRepository.findStudentById(student.id());
+    Student currentStudent = this.studentRepository.findStudentById(student.id());
 
-    if (currentStudent.isPresent()) {
+    if (currentStudent != null) {
       throw new StudentException("The id was used for other student, try again!");
     }
 
@@ -31,15 +30,15 @@ public class StudentService {
   }
 
   public Student searchStudentById(String id) {
-    Optional<Student> student = this.studentRepository.findStudentById(id);
+    Student student = this.studentRepository.findStudentById(id);
 
-    if (student.isEmpty()) {
+    if (student == null) {
       throw new NoSuchElementException("Student was not found");
     }
-    return student.get();
+    return student;
   }
 
-  public List<Student> getListOfStudents() {
+  public Map<String, Student> getListOfStudents() {
     return this.studentRepository.getAll();
   }
 

@@ -1,6 +1,6 @@
 package com.students.console.register.view;
 
-import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.students.console.register.model.Student;
@@ -60,12 +60,13 @@ public class StudentConsoleView implements StudentView {
   }
 
   @Override
-  public void showStudents(List<Student> students) {
+  public void showStudents(Map<String, Student> students) {
 
     if (students.size() == 0) {
       System.out.println("\nThere are not students register");
     } else {
-      for (Student s : students) {
+
+      for (Student s : students.values()) {
         System.out.println("Id: " + s.getId());
         System.out.println("Name:" + s.getName());
         System.out.println("Grade: " + s.getGrade());
@@ -74,6 +75,7 @@ public class StudentConsoleView implements StudentView {
         String state = s.isApproved() ? "Approved" : "Failed";
         System.out.println("State: " + state);
       }
+
     }
   }
 
