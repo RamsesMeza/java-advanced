@@ -30,7 +30,7 @@ public class Student {
       boolean attendanceOnRange = attendance >= 0 && attendance <= 100;
 
       if (!attendanceOnRange) {
-        throw new StudentDomainException("Attendance must be a number between 0 and 100");
+        throw new StudentDomainException("Attendance must be a number between 0 and 10");
       }
     }
 
@@ -65,7 +65,7 @@ public class Student {
   }
 
   public void setName(String name) throws StudentDomainException {
-    if (id == null || id.isBlank()) {
+    if (name == null || name.isBlank()) {
       throw new StudentDomainException("Property Name can't be null");
     }
     this.name = name;
