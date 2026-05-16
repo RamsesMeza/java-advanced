@@ -43,12 +43,13 @@ public class StudentConsoleView implements StudentView {
 
   @Override
   public Double askGrade() {
-    System.out.println("Name:");
+    System.out.println("Grade:");
     return Double.parseDouble(scanner.next());
   }
 
   @Override
   public Integer askAttendance() {
+    System.out.println("Attendance:");
     return Integer.parseInt(scanner.next());
   }
 
