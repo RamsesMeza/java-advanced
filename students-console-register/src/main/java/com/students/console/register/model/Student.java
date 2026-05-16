@@ -18,20 +18,24 @@ public class Student {
       throw new StudentDomainException("Property Name can't be null");
     }
 
-    if (grade != null) {
-      boolean gradeOnRange = grade >= 0 && grade <= 10;
-
-      if (!gradeOnRange) {
-        throw new StudentDomainException("Grade must be a number between 0 and 10");
-      }
+    if (grade == null) {
+      throw new StudentDomainException("Property Grade can't be null");
     }
 
-    if (attendance != null) {
-      boolean attendanceOnRange = attendance >= 0 && attendance <= 100;
+    boolean gradeOnRange = grade >= 0 && grade <= 10;
 
-      if (!attendanceOnRange) {
-        throw new StudentDomainException("Attendance must be a number between 0 and 100");
-      }
+    if (!gradeOnRange) {
+      throw new StudentDomainException("Grade must be a number between 0 and 10");
+    }
+
+    if (attendance == null) {
+      throw new StudentDomainException("Property Grade can't be null");
+    }
+
+    boolean attendanceOnRange = attendance >= 0 && attendance <= 100;
+
+    if (!attendanceOnRange) {
+      throw new StudentDomainException("Attendance must be a number between 0 and 100");
     }
 
     this.id = id;
@@ -77,6 +81,10 @@ public class Student {
 
   public void setGrade(Double grade) throws StudentDomainException {
 
+    if (grade == null) {
+      throw new StudentDomainException("Property Grade can't be null");
+    }
+
     boolean isOnRange = grade >= 0 && grade <= 10;
 
     if (!isOnRange) {
@@ -91,6 +99,10 @@ public class Student {
   }
 
   public void setAttendance(Integer attendance) throws StudentDomainException {
+
+    if (grade == null) {
+      throw new StudentDomainException("Property Grade can't be null");
+    }
 
     boolean isOnRange = attendance >= 0 && attendance <= 100;
 
