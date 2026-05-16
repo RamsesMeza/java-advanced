@@ -26,31 +26,32 @@ public class StudentConsoleView implements StudentView {
   @Override
   public int getOption() {
     System.out.print("Select an option:");
-    return scanner.nextInt();
+    return Integer.parseInt(scanner.nextLine());
   }
 
   @Override
   public String askId() {
     System.out.print("Id:");
-    return scanner.next();
-  }
-
-  @Override
-  public String askName() {
-    System.out.println("Name:");
     return scanner.nextLine();
   }
 
   @Override
+  public String askName() {
+    System.out.print("Name:");
+    String name = scanner.nextLine();
+    return name;
+  }
+
+  @Override
   public Double askGrade() {
-    System.out.println("Grade:");
-    return Double.parseDouble(scanner.next());
+    System.out.print("Grade:");
+    return Double.parseDouble(scanner.nextLine());
   }
 
   @Override
   public Integer askAttendance() {
-    System.out.println("Attendance:");
-    return Integer.parseInt(scanner.next());
+    System.out.print("Attendance:");
+    return Integer.parseInt(scanner.nextLine());
   }
 
   @Override
