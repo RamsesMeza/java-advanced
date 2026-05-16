@@ -19,7 +19,7 @@ public class Student {
     }
 
     if (grade != null) {
-      boolean gradeOnRange = grade >= 0 && grade <= 100;
+      boolean gradeOnRange = grade >= 0 && grade <= 10;
 
       if (!gradeOnRange) {
         throw new StudentDomainException("Grade must be a number between 0 and 100");
@@ -77,7 +77,7 @@ public class Student {
 
   public void setGrade(Double grade) throws StudentDomainException {
 
-    boolean isOnRange = grade >= 0 && grade <= 100;
+    boolean isOnRange = grade >= 0 && grade <= 10;
 
     if (!isOnRange) {
       throw new StudentDomainException("Grade must be a number between 0 and 100");
