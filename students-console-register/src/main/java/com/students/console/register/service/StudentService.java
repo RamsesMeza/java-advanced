@@ -1,6 +1,6 @@
 package com.students.console.register.service;
 
-import java.util.Map;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import com.students.console.register.dto.RegisteStudentDTO;
@@ -38,7 +38,7 @@ public class StudentService {
     return student;
   }
 
-  public Map<String, Student> getListOfStudents() {
+  public List<Student> getListOfStudents() {
     return this.studentRepository.getAll();
   }
 

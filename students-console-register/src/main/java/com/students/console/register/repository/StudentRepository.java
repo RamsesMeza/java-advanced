@@ -1,6 +1,6 @@
 package com.students.console.register.repository;
 
-import java.util.Map;
+import java.util.List;
 
 import com.students.console.register.model.Student;
 
@@ -9,6 +9,6 @@ public interface StudentRepository {
 
   Student findStudentById(String id);
 
-  Map<String, Student> getAll();
+  List<Student> getAll();
 
 }

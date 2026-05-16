@@ -1,6 +1,8 @@
 package com.students.console.register.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.students.console.register.model.Student;
@@ -21,8 +23,8 @@ public class StudentRepositoryMemory implements StudentRepository {
     return students.get(id);
   }
 
-  public Map<String, Student> getAll() {
-    return new HashMap<>(this.students);
+  public List<Student> getAll() {
+    return new ArrayList<>(this.students.values());
   }
 
 }

@@ -1,6 +1,6 @@
 package com.students.console.register.view;
 
-import java.util.Map;
+import java.util.List;
 
 import com.students.console.register.model.Student;
 
@@ -17,7 +17,7 @@ public interface StudentView {
 
   Integer askAttendance();
 
-  void showStudents(Map<String, Student> students);
+  void showStudents(List<Student> students);
 
   void showMessage(String message);
 
