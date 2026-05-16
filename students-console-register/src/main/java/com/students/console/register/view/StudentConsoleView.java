@@ -25,8 +25,17 @@ public class StudentConsoleView implements StudentView {
 
   @Override
   public int getOption() {
-    System.out.print("Select an option:");
-    return Integer.parseInt(scanner.nextLine());
+
+    while (true) {
+      try {
+        System.out.print("Select an option:");
+        return Integer.parseInt(scanner.nextLine());
+      } catch (NumberFormatException e) {
+        System.out.println("Option must be a valid number.");
+
+      }
+    }
+
   }
 
   @Override
@@ -44,14 +53,28 @@ public class StudentConsoleView implements StudentView {
 
   @Override
   public Double askGrade() {
-    System.out.print("Grade:");
-    return Double.parseDouble(scanner.nextLine());
+    while (true) {
+
+      try {
+        System.out.print("Grade:");
+        return Double.parseDouble(scanner.nextLine());
+      } catch (NumberFormatException e) {
+        System.out.println("Grade must be a valid number.");
+      }
+
+    }
   }
 
   @Override
   public Integer askAttendance() {
-    System.out.print("Attendance:");
-    return Integer.parseInt(scanner.nextLine());
+    while (true) {
+      try {
+        System.out.print("Attendance:");
+        return Integer.parseInt(scanner.nextLine());
+      } catch (NumberFormatException e) {
+        System.out.println("Attendance must be a valid number.");
+      }
+    }
   }
 
   @Override
