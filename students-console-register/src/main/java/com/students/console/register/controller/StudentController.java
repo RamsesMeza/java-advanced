@@ -18,7 +18,10 @@ public class StudentController {
     try {
       String id = studentView.askId();
       String name = studentView.askName();
-      RegisteStudentDTO student = new RegisteStudentDTO(id, name, null, null);
+      Double grade = studentView.askGrade();
+      Integer attendance = studentView.askAttendance();
+
+      RegisteStudentDTO student = new RegisteStudentDTO(id, name, grade, attendance);
       studentService.registerStudent(student);
       this.studentView.showMessage("Student registered!");
     } catch (Exception e) {

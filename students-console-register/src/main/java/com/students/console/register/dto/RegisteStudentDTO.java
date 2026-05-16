@@ -15,6 +15,14 @@ public record RegisteStudentDTO(
       throw new IllegalArgumentException("Name is required");
     }
 
+    if (attendance == null) {
+      throw new IllegalArgumentException("Attendance is required");
+    }
+
+    if (grade == null) {
+      throw new IllegalArgumentException("Grade is required");
+    }
+
   }
 
 }
