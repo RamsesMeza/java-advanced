@@ -1,6 +1,6 @@
 package com.students.console.register.model;
 
-import exceptions.StudentDomainException;
+import com.students.console.register.exceptions.StudentDomainException;
 
 public class Student {
   private String id;

@@ -4,11 +4,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import com.students.console.register.dto.RegisteStudentDTO;
+import com.students.console.register.exceptions.StudentDomainException;
+import com.students.console.register.exceptions.StudentException;
 import com.students.console.register.model.Student;
 import com.students.console.register.repository.StudentRepository;
-
-import exceptions.StudentDomainException;
-import exceptions.StudentException;
 
 public class StudentService {
 
