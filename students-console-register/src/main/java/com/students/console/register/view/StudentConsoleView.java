@@ -37,8 +37,8 @@ public class StudentConsoleView implements StudentView {
 
   @Override
   public String askName() {
-    System.out.print("Name:");
-    return scanner.next();
+    System.out.println("Name:");
+    return scanner.nextLine();
   }
 
   @Override
@@ -63,7 +63,7 @@ public class StudentConsoleView implements StudentView {
   public void showStudents(Map<String, Student> students) {
 
     if (students.size() == 0) {
-      System.out.println("\nThere are not students register");
+      System.out.println("\nThere are no students registered");
     } else {
 
       for (Student s : students.values()) {
