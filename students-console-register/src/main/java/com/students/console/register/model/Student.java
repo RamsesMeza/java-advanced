@@ -22,7 +22,7 @@ public class Student {
       boolean gradeOnRange = grade >= 0 && grade <= 10;
 
       if (!gradeOnRange) {
-        throw new StudentDomainException("Grade must be a number between 0 and 100");
+        throw new StudentDomainException("Grade must be a number between 0 and 10");
       }
     }
 
@@ -30,7 +30,7 @@ public class Student {
       boolean attendanceOnRange = attendance >= 0 && attendance <= 100;
 
       if (!attendanceOnRange) {
-        throw new StudentDomainException("Attendance must be a number between 0 and 10");
+        throw new StudentDomainException("Attendance must be a number between 0 and 100");
       }
     }
 
