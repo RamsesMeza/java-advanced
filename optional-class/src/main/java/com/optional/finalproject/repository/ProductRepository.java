@@ -67,6 +67,20 @@ public class ProductRepository {
     return new ArrayList<>(filteredList);
   }
 
+  public int getTotalOfProducts() {
+    return this.products.size();
+  }
+
+  public double getAveragePrice() {
+    Double total = this.products.stream()
+        .mapToDouble(p -> p.getPrice())
+        .sum();
+
+    Double average = total / this.products.size();
+
+    return average;
+  }
+
   // public double averageByCategory() {
 
   // }
