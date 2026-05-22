@@ -11,8 +11,8 @@ import com.optional.finalproject.model.ProductCategory;
 public class ProductRepository {
   private final List<Product> products;
 
-  public ProductRepository(List<Product> products) {
-    this.products = products;
+  public ProductRepository() {
+    this.products = new ArrayList<>();
   }
 
   public void add(Product product) {
