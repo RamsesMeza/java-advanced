@@ -28,6 +28,10 @@ public class ProductService {
     this.productRepository.add(product);
   }
 
+  public List<Product> getAll() {
+    return this.productRepository.getAll();
+  }
+
   public Product searchProductById(Long id) {
     return this.productRepository.findById(id)
         .orElseThrow(() -> new NoSuchElementException("Product not found"));

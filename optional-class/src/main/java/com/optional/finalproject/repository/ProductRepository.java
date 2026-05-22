@@ -49,6 +49,10 @@ public class ProductRepository {
         .findFirst();
   }
 
+  public List<Product> getAll() {
+    return new ArrayList<>(this.products);
+  }
+
   public List<Product> findByCategory(ProductCategory category) {
 
     List<Product> filteredList = this.products.stream()
