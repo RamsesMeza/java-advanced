@@ -19,8 +19,41 @@ public class ProductController {
     this.categoryService = categoryService;
   }
 
-  public void addNewProduct() {
+  public void findByName() {
+    String name = this.productView.askString("Name: ");
+    this.productView.printProduct(this.productService.searchProductByName(name));
+  }
 
+  public void findById() {
+    Long id = this.productView.askNumber("Id: ", Long::parseLong);
+    this.productView.printProduct(this.productService.searchProductById(id));
+  }
+
+  public void findProduct() {
+
+    try {
+      int option = this.productView.showFindProductMenu();
+
+      switch (option) {
+        case 1:
+          this.findByName();
+          break;
+
+        case 2:
+          this.findById();
+          break;
+
+        default:
+          this.productView.showErrorMessage("Select a valid option");
+          break;
+      }
+    } catch (Exception e) {
+      this.productView.showMessage(e.getMessage());
+    }
+
+  }
+
+  public void addNewProduct() {
     try {
 
       this.productView.showMessage("Registering new product\n");
@@ -60,7 +93,7 @@ public class ProductController {
             break;
 
           case 2:
-            this.listProducts();
+            this.findProduct();
             break;
 
           case 3:

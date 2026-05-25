@@ -39,7 +39,7 @@ public class ProductRepository {
   public Optional<Product> findByName(String name) {
 
     return this.products.stream()
-        .filter(p -> name.equals(p.getName()))
+        .filter(p -> p.getName().contains(name))
         .findFirst();
   }
 

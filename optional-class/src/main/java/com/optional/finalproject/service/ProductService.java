@@ -16,7 +16,11 @@ public class ProductService {
     this.productRepository = productRepository;
   }
 
-  public void addProduct(AddProductDto addProductDto) {
+  public void addProduct(AddProductDto addProductDto) throws Exception {
+
+    if (this.productRepository.findById(addProductDto.getId()).isPresent()) {
+      throw new Exception("Id in use");
+    }
 
     Product product = new Product(
         addProductDto.getId(),

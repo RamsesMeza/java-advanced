@@ -1,0 +1,2 @@
+Id repetidos
+Buscar por name debe traer las coincidencias 

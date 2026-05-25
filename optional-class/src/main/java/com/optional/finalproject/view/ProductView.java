@@ -17,7 +17,7 @@ public class ProductView {
   public int showMenu() {
     System.out.println(" ");
     System.out.println("---MENU---");
-    System.out.println("1. Add new product.");
+    System.out.println("1. Add new product");
     System.out.println("2. Search product");
     System.out.println("3. List products");
     System.out.println("4. Show statistics");
@@ -25,13 +25,88 @@ public class ProductView {
     return this.askNumber("Select and option: ", Integer::parseInt);
   }
 
-  public int showCategoryMenu() {
+  public int showFindProductMenu() {
+
+    while (true) {
+      try {
+        System.out.println(" ");
+        System.out.println("Search by:");
+        System.out.println("1. Name");
+        System.out.println("2. Id");
+
+        int option = this.askNumber("Select and option: ", Integer::parseInt);
+
+        boolean invalidRange = option <= 0 || option > 2;
+
+        if (invalidRange) {
+          throw new Exception("Select a valid option");
+        }
+
+        return option;
+      } catch (Exception e) {
+        this.showErrorMessage(e.getMessage());
+      }
+    }
+
+  }
+
+  public void printProduct(Product product) {
     System.out.println(" ");
-    System.out.println("---CATEGORIES---");
-    System.out.println("1. Electronic");
-    System.out.println("2. Clothing");
-    System.out.println("3. Food");
-    return this.askNumber("Select and option: ", Integer::parseInt);
+    System.out.println("Id: " + product.getId());
+    System.out.println("Name: " + product.getName());
+    System.out.println("Category: " + product.getCategory());
+  }
+
+  public int showCategoryMenu() {
+
+    while (true) {
+      try {
+        System.out.println(" ");
+        System.out.println("---CATEGORIES---");
+        System.out.println("1. Electronic");
+        System.out.println("2. Clothing");
+        System.out.println("3. Food");
+
+        int option = this.askNumber("Select and option: ", Integer::parseInt);
+
+        boolean invalidRange = option <= 0 || option > 3;
+
+        if (invalidRange) {
+          throw new Exception("Select a valid option");
+        }
+
+        return option;
+      } catch (Exception e) {
+        this.showErrorMessage(e.getMessage());
+      }
+    }
+
+  }
+
+  public int showListProductsMenu() {
+
+    while (true) {
+      try {
+        System.out.println(" ");
+        System.out.println("---Filters---");
+        System.out.println("1. Category");
+        System.out.println("2. Price more then");
+        System.out.println("3. Food");
+
+        int option = this.askNumber("Select and option: ", Integer::parseInt);
+
+        boolean invalidRange = option <= 0 || option > 3;
+
+        if (invalidRange) {
+          throw new Exception("Select a valid option");
+        }
+
+        return option;
+      } catch (Exception e) {
+        this.showErrorMessage(e.getMessage());
+      }
+    }
+
   }
 
   public void showErrorMessage(String message) {
@@ -63,6 +138,8 @@ public class ProductView {
   public void listProducts(List<Product> products) {
     System.out.println(" ");
     System.out.println("Productos");
+
+    System.out.println(products);
 
     products.forEach(p -> {
       System.out.println(" ");
